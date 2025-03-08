@@ -1,0 +1,43 @@
+<!-- HTMLファイル内部呼び出し -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScriptの呼び出し方法</title>
+    <script>
+        alert('Hello, JavaScript!');
+    </script>
+</head>
+<body>
+    <h1>JavaScriptの呼び出し方法</h1>
+</body>
+</html>
+
+<!-- 外部呼び出し -->
+ <!DOCTYPE html>
+ <html lang="ja">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScriptの呼び出し方法</title>
+    <script src="script.js"></script>
+ </head>
+ <body>
+    <h1>JavaScriptの呼び出し方法</h1>
+ </body>
+ </html>
+
+ <!-- インラインスクリプトとして記述 -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScriptの呼び出し方法</title>
+</head>
+<body>
+    <h1>JavaScriptの呼び出し方法</h1>
+    <button onclick="alert('Hello, JavaScript!!!')">Click me!</button>
+</body>
+</html>
