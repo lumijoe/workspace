@@ -1,15 +1,125 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScriptの呼び出し方法</title>
-    <script src="script.js"></script>
+    <!-- <title>DOM操作の例</title> -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>JavaScriptの呼び出し方法</h1>
-    <!-- <button onclick="alert('Hello, JavaScript!!!')">Click me!</button>
-     -->
-</body>
+
+    <!-- <h1 id="header">Hello, World!</h1>
+    <button id="myButton">Click me</button> -->
+    <!-- <button id="changeTextButton">テキスト変更</button>
+    <label for="subscribe">ニュースレターを受け取る</label>
+    <input type="checkbox" id="subscribe" name="subscribe"> -->
+    
+    <!-- <h1 id="header">Hello, World!</h1>
+    <p class="myClass">DOMの文章です</p>
+    <a href="https://runteq.jp">RUNTEQのページへ</a> -->
+    <!-- <a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Functions">MDNのページへ</a> -->
+    <!-- <script>
+        let header = document.getElementById('header');
+        console.log(header);
+
+        let paragraphs = document.getElementsByClassName('myClass');
+        console.log(paragraphs);
+
+        let links = document.getElementsByTagName('a');
+        console.log(links);
+
+        let header2 = document.querySelector('#header');
+        console.log(header2);
+
+        テキスト変更
+        let header = document.getElementById('header');
+        header.textContent = 'Welcome!';
+        属性変更
+        let link = document.querySelector('a');
+        link.setAttribute('href', 'https://www.youtube.com/channel/UCwjx6ZG4pwCvAPSozYEWymA');
+
+        ２つ目の属性を変更したいとき
+        let links = document.getElementsByTagName('a');
+        let secondLink = links[1];
+        secondLink.setAttribute('href', 'https://developer.mozilla.org/en-US/curriculum/');
+
+        スタイルの変更
+        let header2 = document.getElementById('header');
+        header2.style.color = 'blue';
+
+        要素の追加と削除
+        新しい要素の追加
+        let newParagraph = document.createElement('P');
+        newParagraph.textContent = 'これは新しい段落です';
+        document.body.appendChild(newParagraph);
+        要素の削除
+        let oldParagraph = document.querySelector('p');
+        oldParagraph.remove();
+        
+
+    </script> -->
+    <!-- <script src="script.js"></script> -->
+     <!-- <script>
+        // let button = document.getElementById('myButton');
+        // button.onclick = function() {
+        //     alert('Button clicked!');
+        // };
+        function showAlert() {
+            alert('Button clicked!');
+        }
+        let button = document.getElementById('myButton');
+        button.addEventListener('click', showAlert);
+     </script> -->
+     <body class="bg-slate-100">
+        <main class="p-14">
+          <div id="rantekun-background" class="relative m-auto" style="width: 896px; height: 360px; background-image: url(https://resource.runteq.jp/curriculum-img/bg-1.png); background-size: cover;">
+            <img src="https://resource.runteq.jp/curriculum-img/rantekun.svg" alt="らんてくん" width="158" height="246" id="rantekun" class="absolute" style="bottom: 28px; left: 374px;">
+          </div>
+          <div class="mt-10 px-6 flex justify-center">
+            <button id="change-background" class="px-9 py-3 bg-orange-500 hover:bg-orange-600 flex items-center justify-center rounded-lg">
+              <img src="https://resource.runteq.jp/curriculum-img/icon-reload.svg" alt="背景変更アイコン" width="34" height="34" class="mr-2">
+              <span class="text-xl font-bold text-white">背景変更</span>
+            </button>
+          </div>
+        </main>
+        <script>
+
+            const backgroundImage1 = 'url("https://resource.runteq.jp/curriculum-img/bg-1.png")';
+            const backgroundImage2 = 'url("https://resource.runteq.jp/curriculum-img/bg-2.png")';
+         // ここにJavaScriptのコードを記述します
+         const button = document.getElementById('change-background');
+         const background = document.getElementById('rantekun-background');
+         let isBackgroundImage1 = true;
+        //  console.log(button);
+        // button.addEventListener('click', function() {
+        //     console.log('ボタンがクリックされました');
+        // });
+        button.addEventListener('click', function() {
+            if (isBackgroundImage1) {
+                background.style.backgroundImage = backgroundImage2;
+                console.log(backgroundImage2);
+                isBackgroundImage1 = false;
+            } else {
+                background.style.backgroundImage = backgroundImage1;
+                console.log(backgroundImage1);
+                isBackgroundImage1 = true;
+            }
+        });
+
+        
+        // let isBackgroundImage1 = true;
+        // button.addEventListener('click', function() {
+        //     console.log(isBackgroundImage1);
+        //     if (isBackgroundImage1) {
+        //         console.log('背景画像１を2に変更します');
+        //         isBackgroundImage1 = false;
+        //         console.log(isBackgroundImage1);
+        //     }  else {
+        //         console.log('背景画像２を１に変更します');
+        //         isBackgroundImage1 = true;
+        //         console.log(isBackgroundImage1);
+        //     }
+        // });
+        </script>
+      </body>
+
 </html>
