@@ -55,3 +55,21 @@ console.log(x >= y); // 以上か: false (10>=20)
 for (let i = 0; i < 5 ; i++) {
     console.log(i);
 }
+
+// switch文
+// 複数の条件を使って、実行するコードを選択します。
+let color = "red";
+switch (color) {
+    case "red":
+        console.log("Color is red.");
+        break;
+    case "blue":
+        console.log("Color is blue.");
+        break;
+    default:
+        console.log("Color is not red or blue.");
+        break;
+}
+
+// // whileループ
+// 条件がtrueの間、繰り返し処理を行います。
