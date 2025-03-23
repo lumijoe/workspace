@@ -78,32 +78,32 @@
 //     count++;
 // }
 
-document.getElementById('changeTextButton').addEventListener('click', 
-    function() {
-        let header = document.getElementById('header');
-        header.textContent = 'Text Changed!';
-    }
-);
+// document.getElementById('changeTextButton').addEventListener('click', 
+//     function() {
+//         let header = document.getElementById('header');
+//         header.textContent = 'Text Changed!';
+//     }
+// );
 
-document.getElementById('changeTextButton').addEventListener('mouseover',
-    function () {
-        let button = document.querySelector('button');
-        button.style.color = 'blue';
-    }
-);
-document.getElementById('changeTextButton').addEventListener('mouseout',
-    function () {
-        let button = document.querySelector('button');
-        button.style.color = 'black';
-    }
-);
-document.getElementById('changeTextButton').addEventListener('keydown',
-    function () {
-        let button2 = document.querySelector('button');
-        button2.style.backgroundColor = 'black';
-        button2.style.color = "white";
-    }
-);
+// document.getElementById('changeTextButton').addEventListener('mouseover',
+//     function () {
+//         let button = document.querySelector('button');
+//         button.style.color = 'blue';
+//     }
+// );
+// document.getElementById('changeTextButton').addEventListener('mouseout',
+//     function () {
+//         let button = document.querySelector('button');
+//         button.style.color = 'black';
+//     }
+// );
+// document.getElementById('changeTextButton').addEventListener('keydown',
+//     function () {
+//         let button2 = document.querySelector('button');
+//         button2.style.backgroundColor = 'black';
+//         button2.style.color = "white";
+//     }
+// );
 
 // document.getElementById('subscribe').addEventListener('change', function () {
 //     if (this.checked) {
@@ -112,6 +112,8 @@ document.getElementById('changeTextButton').addEventListener('keydown',
 //         alert('ニュースレターを受け取らないことにしました！');
 //     }
 // });
+
+
 
 
 
