@@ -29,6 +29,38 @@
                 transform: rotate(-360deg);
             }
         }
+
+        svg {
+      width: 200px;
+      height: 200px;
+      transform: rotate(-90deg); /* 初期位置を上にする */
+    }
+
+    .background-circle {
+      fill: none;
+      stroke: lightgray;
+      stroke-width: 10;
+    }
+
+    .progress-circle {
+      fill: none;
+      stroke: blue;
+      stroke-width: 10;
+      stroke-dasharray: 283; /* 円周の長さ */
+      stroke-dashoffset: 283; /* 初期状態では全く表示しない */
+      animation: progress-animation 2s ease forwards; /* アニメーションを追加 */
+    }
+
+    /* アニメーション設定 */
+    @keyframes progress-animation {
+      0% {
+        stroke-dashoffset: 283; /* 最初は全く表示しない */
+      }
+      100% {
+        stroke-dashoffset: 56.6; /* 進捗度（80%）に応じた値 */
+      }
+    }
+
     </style>
     <title>html2</title>
 </head>
@@ -36,17 +68,68 @@
     <header>
         <div class="bg-orange-400 text-white text-center py-4">
             <h1 class="text-2xl font-bold">らんてくんのお部屋</h1>
-            <p>こんにちえわ</p>
         </div>
     </header>
     <main class="p-14">
         <div id="rantekun-background" class="relative m-auto" style="width: 896px; height: 360px; background-image:url(https://runteq3-curriculum-production.s3.ap-northeast-1.amazonaws.com/curriculum-img/bg-1.png); background-size: cover;">
             <img src="https://runteq3-curriculum-production.s3.ap-northeast-1.amazonaws.com/curriculum-img/rantekun.svg" alt="らんてくん" width="158" height="246" id="rantekun" class="absolute" style="bottom:28px; left:374px;">
         </div>
+        <svg viewBox="0 0 100 100">
+            <!-- 背景円 -->
+            <circle class="background-circle" cx="50" cy="50" r="45" />
+            <!-- 進捗円（アニメーションで変化） -->
+            <circle class="progress-circle" cx="50" cy="50" r="45" />
+          </svg>
     </main>
     <script>
+        // ①テキストを取得できているかtextContent
+        // const header = document.querySelector('header h1').textContent;
+        // console.log(header);
+        // ②そのテキストを配列として1文字づつ取得できているかsplit
+        // const header = document.querySelector('header h1').textContent;
+        // const headerArray = header.split('');
+        // console.log(headerArray);
+        // ③1文字づつがアニメーションで回転するか
+        // const header = document.querySelector('header h1').textContent;
+        // const headerArray = header.split('');
+        // document.querySelector('header h1').textContent = '';
+        // for (let i = 0; i < headerArray.length; i++) {
+        // console.log(headerArray[i]);
+        //     const span = document.createElement('span');
+        //     span.textContent = headerArray[i];
+        // console.log(span);
+        //     span.classList.add('rotate-left');
+        // console.log(span);
+        //     document.querySelector('header h1').appendChild(span);
+        // }
+        // ④1文字ずづアニメーションが開始する時間を設定(1文字づつの順番付与が大事になってくる)
         const header = document.querySelector('header h1').textContent;
-        console.log(header);
+        const headerArray = header.split('');
+        document.querySelector('header h1').textContent = '';
+        for (let i = 0; i < headerArray.length; i++) {
+            const span = document.createElement('span');
+            span.textContent = headerArray[i];
+            span.classList.add('rotate-left');
+            span.style.animationDelay = i * 100 +'ms';
+        console.log(span);
+            document.querySelector('header h1').appendChild(span);
+        }
+
+
+
+        
+
+        // 円グラフ
+        window.onload = () => {
+      const progressCircle = document.querySelector('.progress-circle');
+
+      // 80%の進捗を表現するため、dashoffsetを計算
+      const progress = 80;  // 進捗度（0〜100）
+      const offset = 283 - (283 * (progress / 100)); // 円周の長さ283に対して、80%の進捗
+
+      // アニメーションを開始
+      progressCircle.style.strokeDashoffset = offset;
+    };
 
     </script>
 </body>
