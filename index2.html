@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .rotate-left {
+            display: inline-block;
+            animation: rotate-left 1s linear;
+        }
+        @keyframes rotate-left {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .rotate-right {
+            display: inline-block;
+            animation: rotate-right 1s linear;
+        }
+        @keyframes rotate-right {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+    </style>
+    <title>html2</title>
+</head>
+<body class="bg-slate-100">
+    <header>
+        <div class="bg-orange-400 text-white text-center py-4">
+            <h1 class="text-2xl font-bold">らんてくんのお部屋</h1>
+        </div>
+    </header>
+    <main class="p-14">
+        <div id="rantekun-background" class="relative m-auto" style="width: 896px; height: 360px; background-image:url(https://runteq3-curriculum-production.s3.ap-northeast-1.amazonaws.com/curriculum-img/bg-1.png); background-size: cover;">
+            <img src="https://runteq3-curriculum-production.s3.ap-northeast-1.amazonaws.com/curriculum-img/rantekun.svg" alt="らんてくん" width="158" height="246" id="rantekun" class="absolute" style="bottom:28px; left:374px;">
+        </div>
+    </main>
+    <script>
+
+    </script>
+</body>
+</html>
