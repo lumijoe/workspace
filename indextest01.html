@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .slide-in-left {
+      display: inline-block;
+      opacity: 0;
+      animation: slide-in-left 1s forwards;
+    }
+    @keyframes slide-in-left {
+      from {
+        transform: translateX(-500%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  </style>
+
+</head>
+<body class="bg-slate-100">
+  <main class="p-14">
+    <div id="rantekun-background" class="relative m-auto flex" style="width: 896px; height: 360px; background-image: url(https://resource.runteq.jp/curriculum-img/bg-1.png); background-size: cover;">
+    </div>
+  </main>
+  <script>
+    // 出現させる数
+    const num = 4;
+
+    // それぞれのURL
+    const rantekunImageUrl = 'https://resource.runteq.jp/curriculum-img/rantekun.svg';
+    const roborantekunImageUrl = 'https://resource.runteq.jp/curriculum-img/roborantekun.svg';
+    
+    // らんてくんとロボらんてくんを交互に表示する
+    for (let i = 0; i < num; i++) {
+      // 画像要素を作成する
+      const img = document.createElement('img');
+      img.classList.add('slide-in-left');
+
+
+      // ↓↓↓以下を修正してらんてくんとロボらんてくんが交互になるように設定↓↓↓
+      img.src = rantekunImageUrl;
+
+
+      // img要素のアニメーションが開始する時間を設定する
+      img.style.animationDelay = i * 300 + 'ms';
+      
+      // span要素をヘッダーに追加する
+      document.querySelector('#rantekun-background').appendChild(img);
+    }
+
+  </script>
+</body>
+</html>
