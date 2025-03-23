@@ -103,21 +103,39 @@
         //     document.querySelector('header h1').appendChild(span);
         // }
         // ④1文字ずづアニメーションが開始する時間を設定(1文字づつの順番付与が大事になってくる)
+        // const header = document.querySelector('header h1').textContent;
+        // const headerArray = header.split('');
+        // document.querySelector('header h1').textContent = '';
+        // for (let i = 0; i < headerArray.length; i++) {
+        //     const span = document.createElement('span');
+        //     span.textContent = headerArray[i];
+        //     span.classList.add('rotate-left');
+        //     span.style.animationDelay = i * 100 +'ms';
+        // console.log(span);
+        //     document.querySelector('header h1').appendChild(span);
+        // }
+        // ⑤奇数右回り偶数左回りへ変更する(余りが0の時が偶数、それで定義する)
         const header = document.querySelector('header h1').textContent;
         const headerArray = header.split('');
         document.querySelector('header h1').textContent = '';
         for (let i = 0; i < headerArray.length; i++) {
             const span = document.createElement('span');
             span.textContent = headerArray[i];
-            span.classList.add('rotate-left');
+
+            if (i % 2 === 0) {
+                span.classList.add('rotate-left');
+            } else {
+                span.classList.add('rotate-right');
+            }
             span.style.animationDelay = i * 100 +'ms';
-        console.log(span);
+            console.log(span);
             document.querySelector('header h1').appendChild(span);
         }
 
 
 
-        
+
+
 
         // 円グラフ
         window.onload = () => {
