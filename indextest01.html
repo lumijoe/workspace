@@ -41,10 +41,19 @@
       // 画像要素を作成する
       const img = document.createElement('img');
       img.classList.add('slide-in-left');
+      console.log(i);
 
 
       // ↓↓↓以下を修正してらんてくんとロボらんてくんが交互になるように設定↓↓↓
-      img.src = rantekunImageUrl;
+    if (i % 2 === 0) {
+        img.src = rantekunImageUrl;
+    } else {
+        img.src = roborantekunImageUrl;
+    }
+
+
+
+      
 
 
       // img要素のアニメーションが開始する時間を設定する
