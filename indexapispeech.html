@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テキスト読み上げサンプル</title>
+</head>
+<body>
+    <textarea id="text" rows="10" cols="50">ここに読み上げたいテキストを入力してください</textarea>
+    <button id="speakButton">Speak</button>
+    <script>
+        const synth = window.speechSynthesis;
+        const text = document.getElementById('text');
+        const speakButton = document.getElementById('speakButton');
+        speakButton.addEventListener('click', function() {
+   
+            const utterance = new SpeechSynthesisUtterance(text.value);
+            synth.speak(utterance);
+        });
+    </script>
+</body>
+</html>
