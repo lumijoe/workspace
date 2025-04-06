@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テスト</title>
+</head>
+<body>
+    <!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100">
+    <main class="p-14">
+      <div id="rantekun-background" class="relative m-auto" style="width: 896px; height: 360px; background-image: url(https://resource.runteq.jp/curriculum-img/bg-1.png); background-size: cover;">
+        <img src="https://resource.runteq.jp/curriculum-img/rantekun.svg" alt="らんてくん" width="158" height="246" id="rantekun" class="absolute" style="bottom: 28px; left: 374px;">
+      </div>
+  
+      <div class="mt-10 px-6 flex justify-center">
+        <button id="change-background" class="px-9 py-3 bg-orange-500 hover:bg-orange-600 flex items-center justify-center rounded-lg">
+          <img src="https://resource.runteq.jp/curriculum-img/icon-reload.svg" alt="背景変更アイコン" width="34" height="34" class="mr-2">
+          <span class="text-xl font-bold text-white">背景変更</span>
+        </button>
+        <button id="move-left" class="ml-8 px-9 py-3 bg-orange-500 hover:bg-orange-600 flex items-center justify-center rounded-lg">
+          <img src="https://resource.runteq.jp/curriculum-img/icon-left.svg" alt="左アイコン" width="34" height="34" class="mr-2">
+          <span class="text-xl font-bold text-white">左へ</span>
+        </button>
+        <button id="move-right" class="ml-8 px-9 py-3 bg-orange-500 hover:bg-orange-600 flex items-center justify-center rounded-lg">
+          <span class="text-xl font-bold text-white">右へ</span>
+          <img src="https://resource.runteq.jp/curriculum-img/icon-right.svg" alt="右アイコン" width="34" height="34" class="ml-2">
+        </button>
+      </div>
+    </main>
+    <audio id="sound" src="https://resource.runteq.jp/audio/runteq.mp3"></audio>
+  </body>
+  <script>
+    let isBackgroundImg1 = true;
+    // 背景画像のURLを定義する
+    const backgroundImg1 = 'url(https://resource.runteq.jp/curriculum-img/bg-1.png)';
+    const backgroundImg2 = 'url(https://resource.runteq.jp/curriculum-img/bg-2.png)';
+    const background = document.getElementById('rantekun-background');
+    document.querySelector('#change-background').addEventListener('click', () => {
+      // 背景画像の状態が背景1の場合、背景2に変更する(isBackgroundImg1がtrueの場合)
+      if (isBackgroundImg1) {
+        background.style.backgroundImage = backgroundImg2;
+        isBackgroundImg1 = false;
+      }
+      // 背景画像の状態が背景2の場合、背景1に変更する(isBackgroundImg1がfalseの場合)
+      else {
+        background.style.backgroundImage = backgroundImg1;
+        isBackgroundImg1 = true;
+      }
+    });
+  
+    document.querySelector('#move-left').addEventListener('click', () => {
+      const rantekun = document.getElementById('rantekun');
+      let left = parseInt(rantekun.style.left) || 0;
+      left = left - 10;
+      rantekun.style.left = left + 'px';
+    });
+  
+    document.querySelector('#move-right').addEventListener('click', () => {
+      const rantekun = document.getElementById('rantekun');
+      let left = parseInt(rantekun.style.left) || 0;
+      // ↓↓処理を記述する↓↓
+      right = left + 10;
+      rantekun.style.left = right + 'px';
+    });
+  </script>
+  </html>
